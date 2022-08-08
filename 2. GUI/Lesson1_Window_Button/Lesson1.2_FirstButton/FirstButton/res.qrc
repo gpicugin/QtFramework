@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>lhandmouse.jpg</file>
+        <file>mouserun.jpg</file>
+        <file>mousesit.jpg</file>
+        <file>rhandmouse.jpg</file>
+    </qresource>
+</RCC>

@@ -27,13 +27,15 @@ bool QMyPushButton::event(QEvent *event)
 
 void QMyPushButton::lClicked()
 {
-    QIcon ButtonIcon("lhandmouse.jpg");
+    QPixmap pixmap("://lhandmouse.jpg");
+    QIcon ButtonIcon(pixmap);
     this->setIcon(ButtonIcon);
 }
 
 void QMyPushButton::rClicked()
 {
-    QIcon ButtonIcon("rhandmouse.jpg");
+    QPixmap pixmap("://rhandmouse.jpg");
+    QIcon ButtonIcon(pixmap);
     this->setIcon(ButtonIcon);
 }
 
@@ -45,7 +47,9 @@ void QMyPushButton::hoverEnter()
     const int &ah = this->geometry().height();
     this->setGeometry(x + 100, y + 100, aw, ah);
 
-    QIcon ButtonIcon("mousesit.png");
+
+    QPixmap pixmap("://mousesit.jpg");
+    QIcon ButtonIcon(pixmap);
     this->setIcon(ButtonIcon);
 }
 
@@ -57,6 +61,7 @@ void QMyPushButton::hoverLeave()
      const int &ah = this->geometry().height();
      this->setGeometry(x - 100, y - 100, aw, ah);
 
-     QIcon ButtonIcon("mouserun.jpg");
+     QPixmap pixmap("://mouserun.jpg");
+     QIcon ButtonIcon(pixmap);
      this->setIcon(ButtonIcon);
 }
