@@ -1,5 +1,6 @@
 QT += core
 QT -= gui
+QT += core5compat
 CONFIG += c++17 console
 CONFIG -= app_bundle
 

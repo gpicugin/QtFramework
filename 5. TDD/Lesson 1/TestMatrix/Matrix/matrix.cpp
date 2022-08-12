@@ -1,8 +1,5 @@
 #include "matrix.h"
 
-//Matrix::Matrix()
-//{
-//}
 
 
 Matrix rotate90Degrees( const Matrix& matrix )

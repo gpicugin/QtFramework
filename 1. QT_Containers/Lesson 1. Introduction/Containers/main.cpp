@@ -4,6 +4,7 @@
 // Последовательные
 #include <QVector>
 #include <QList>
+#include <QLinkedList> // ???
 #include <QStack>
 #include <QQueue>
 #include <QVectorIterator>

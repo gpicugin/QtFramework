@@ -15,7 +15,6 @@ public:
 private slots:
     void initTestCase();
     void cleanupTestCase();
-//    void test_case1();
     void rotate90DegreesTest();
     void rotate90DegreesTest_data();
     void rotate90DegreesExceptionTest();
@@ -44,17 +43,13 @@ void TMatrix::cleanupTestCase()
 
 }
 
-//void TMatrix::test_case1()
-//{
-
-//}
 
 void TMatrix::rotate90DegreesTest()
 {
-    QFETCH( Matrix, matrix );
-    QFETCH( Matrix, result );
+    QFETCH( Matrix, matrix ); // объявление перменной в тестировании
+    QFETCH( Matrix, result ); // объявление перменной в тестировании
 
-    QCOMPARE( rotate90Degrees( matrix ), result );
+    QCOMPARE( rotate90Degrees( matrix ), result ); // сравнение двух объектов
 }
 
 void TMatrix::rotate90DegreesTest_data()
