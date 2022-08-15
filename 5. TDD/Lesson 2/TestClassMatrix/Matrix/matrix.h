@@ -15,6 +15,7 @@ public:
     const Matrix& getStore();
     void setStore(const Matrix& tmp);
     Smart_Matrix operator+(Smart_Matrix& matrix_2);
+
     QVector<int>& operator ()(int index);
     const QVector<int>& operator ()(int index) const;
     int& operator() (int index1, int index2);
