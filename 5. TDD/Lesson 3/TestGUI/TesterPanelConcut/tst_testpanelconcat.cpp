@@ -66,6 +66,23 @@ void TestPanelConcat::TestClear()
     QVERIFY2(panel.mLabelRes->text().isEmpty(), "Label result not empty");
 }
 
+void TestPanelConcat::TestConcat()
+{
+    QFETCH(QTestEventList, inputA);
+    QFETCH(QTestEventList, inputB);
+    QFETCH(QString, result);
+
+    // write into input fields
+    inputA.simulate(panel.mInputA);
+    inputB.simulate(panel.mInputB);
+
+    // click button CONCAT
+    QTest::mouseClick(panel.mButtonConcat, Qt::LeftButton);
+
+    // compare result
+    QCOMPARE(panel.mLabelRes->text(), result);
+}
+
 void TestPanelConcat::TestConcat_data()
 {
     QTest::addColumn<QTestEventList>("inputA");
@@ -106,22 +123,6 @@ void TestPanelConcat::TestConcat_data()
     QTest::newRow("All empty") << listA << listB << QString();
 }
 
-void TestPanelConcat::TestConcat()
-{
-    QFETCH(QTestEventList, inputA);
-    QFETCH(QTestEventList, inputB);
-    QFETCH(QString, result);
-
-    // write into input fields
-    inputA.simulate(panel.mInputA);
-    inputB.simulate(panel.mInputB);
-
-    // click button CONCAT
-    QTest::mouseClick(panel.mButtonConcat, Qt::LeftButton);
-
-    // compare result
-    QCOMPARE(panel.mLabelRes->text(), result);
-}
 
 QTEST_MAIN(TestPanelConcat)
 
