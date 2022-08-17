@@ -4,7 +4,7 @@
 // Последовательные
 #include <QVector>
 #include <QList>
-#include <QLinkedList> // ???
+#include <QLinkedList>
 #include <QStack>
 #include <QQueue>
 #include <QVectorIterator>
@@ -25,13 +25,15 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    QVector<int>    vec;
-    QList<int>      list;
-    QStack<int>     stack;
-    QQueue<int>     queue;
+    QVector<int>        vec;
+    QList<int>          list;
+    QLinkedList<int>    lList;
+    QStack<int>         stack;
+    QQueue<int>         queue;
 
     vec << 1 << 2 << 3 << 4; // заполнение контейнера
     list << 1 << 2 << 3 << 4;
+    lList << 1 << 2 << 3 << 4;
     stack << 1 << 2 << 3 << 4 << 5;
     queue << 1 << 2 << 3 << 4;
     qDebug() << "Intriduction";
@@ -147,8 +149,5 @@ int main(int argc, char *argv[])
     {
         qDebug() << "Element + 5:" << i + 5;
     }
-
-
-
     return a.exec();
 }
