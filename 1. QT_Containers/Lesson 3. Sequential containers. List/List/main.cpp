@@ -108,6 +108,14 @@ int main(int argc, char *argv[])
     list1.clear();                       // удаляет все элементы из вектора
     qDebug() << list1;
 
+    list1.push_front(1);
+    list1.push_back(999);
+    qDebug() << list1;
+
+    list1.pop_front();
+    list1.pop_back();
+    qDebug() << list1;
+
     int val;
     val = list4.takeFirst();
     qDebug() << val << list4;
@@ -135,7 +143,7 @@ int main(int argc, char *argv[])
     qDebug() << result;
     qDebug() << result[0];
 
-    // Другие медоты
+    // Другие методы
     QList<int> tmp = result.mid(0, result.size()/2); // возвращает контейнер, с копиями элементов, задаются первой позицией и количеством
     tmp.reserve(100);
     tmp.squeeze();

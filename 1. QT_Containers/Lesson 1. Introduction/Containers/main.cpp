@@ -11,8 +11,6 @@
 #include <QListIterator>
 #include <QMutableVectorIterator>
 #include <QMutableListIterator>
-//#include <QStackIterator>
-//#include <QQueueIterator>
 
 // Ассоциативные
 #include <QSet>
@@ -25,19 +23,22 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    QVector<int>        vec;
-    QList<int>          list;
-    QLinkedList<int>    lList;
-    QStack<int>         stack;
-    QQueue<int>         queue;
+    QVarLengthArray<int>    arr;
+    QVector<int>            vec;
+    QList<int>              list;
+    QLinkedList<int>        lList;
+    QStack<int>             stack;
+    QQueue<int>             queue;
+    // контейнеры могут быть вложены друг в друга
 
-    vec << 1 << 2 << 3 << 4; // заполнение контейнера
+    arr << 1 << 2 << 3 << 4;            // заполнение контейнера
+    vec << 1 << 2 << 3 << 4;
     list << 1 << 2 << 3 << 4;
     lList << 1 << 2 << 3 << 4;
     stack << 1 << 2 << 3 << 4 << 5;
     queue << 1 << 2 << 3 << 4;
     qDebug() << "Intriduction";
-    qDebug() << (vec == list); // сравнение содержимого
+    qDebug() << (vec == list);          // сравнение содержимого
     qDebug() << (vec != stack);
 
     vec = stack; // присваивание
