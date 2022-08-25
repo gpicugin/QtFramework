@@ -3,6 +3,15 @@
 #include <QLinkedList>
 #include <QLinkedListIterator>
 
+
+template<typename T>
+struct Llist
+{
+    T* prevNext;
+    T data;
+    T* nextElm;
+};
+
 template<typename T>
 void out(QLinkedList<T> input)
 {
@@ -151,5 +160,11 @@ int main(int argc, char *argv[])
     qDebug() << std_list;
     QLinkedList<int> from_std_list = QLinkedList<int>::fromStdList(std_list);
     out(from_std_list);
+
+    foreach(int val, lList)
+    {
+        qDebug() << val;
+    }
+
     return a.exec();
 }
