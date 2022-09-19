@@ -21,3 +21,12 @@ void MainWindow::on_pushButton_clicked()
     window.exec();
 }
 
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    // hide() // закрывает старое окно
+    windows = new SecondWindow(this);
+    windows->show();
+
+}
+

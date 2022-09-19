@@ -4,6 +4,8 @@
 #include <QBitArray>
 #include <QQueue>
 #include <QStack>
+#include <QImage>
+#include <QBuffer>
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -52,9 +54,28 @@ int main(int argc, char *argv[])
     QByteArray x("apple");
     qDebug() << x.rightJustified(8, '.');    // "...apple"
 
+    QByteArray xCompressed = qCompress(x);
+    qDebug() << xCompressed;
+    qDebug() << qUncompress(xCompressed);
+
     byteArr1.setRawData(arr, 100);
     qDebug() << byteArr1;
 
+    QByteArray text = QByteArray::fromHex("517420697320677265617421");
+    qDebug() << text.data();
+
+    QString path("../Others/");
+    QImage imageSrc(path + "image.jpg");
+    QByteArray src;
+    QBuffer buffer(&src);
+    buffer.open(QIODevice::WriteOnly);
+    imageSrc.save(&buffer, "JPG"); // writes image into buffer in JPG format
+
+
+    QByteArray imageData = QByteArray::fromBase64(buffer.data().toBase64());
+    QImage imageDst;
+    imageDst.loadFromData(imageData);
+    qDebug() << imageDst.save(path + "image2.png");
 
     // QBitArray - не шаблонный класс!
     // Может использоваться для хранения большого кол-ва битовых переменных

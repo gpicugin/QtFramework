@@ -11,11 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>FirstWindow</string>
+   <string notr="true">Window</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../icon.jpg</normaloff>../icon.jpg</iconset>
+    <normaloff>Build/icon.jpg</normaloff>Build/icon.jpg</iconset>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonFollowStyle</enum>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
